@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   namespace :staff do
     root 'top#index'
+    get 'login' => 'sessions#new', as: :login
+    post 'session' => 'sessions#create', as: :session
+    delete 'session' => 'sessions#destroy'
   end
   namespace :admin do
     root 'top#index'
@@ -62,4 +65,7 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  # jissen ruby on rails 4 -- P121
+  root 'errors#routing_error'
+  get '*anything' => 'errors#routing_error'
 end

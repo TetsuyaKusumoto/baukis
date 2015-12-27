@@ -16,15 +16,11 @@ div#wrapper {
 }
 
 header {
-  padding: $moderate;
-  background-color: $dark_cyan;
+  padding: $moderate;;
+  background-color: $dark_yellow;
   color: $very_light_gray;
   span.logo-mark {
     font-weight: bold;
-  }
-  a {
-    color: $very_light_gray;
-    float: right;
   }
 }
 footer {
