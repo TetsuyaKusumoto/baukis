@@ -30,6 +30,14 @@ module Baukis
       g.controller_specs false
       g.view_specs false
     end
+    ## to avoid error "Unable to autoload constant ---" I added
+    config.autoload_paths += %W(#{config.root}/forms)
+    config.autoload_paths += %W(#{config.root}/service)
+    
+#    config.autoload_paths += [
+#      config.root.join('app', 'forms','service')
+#    ]
+
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
