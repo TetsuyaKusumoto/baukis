@@ -16,14 +16,19 @@ class Staff::SessionsController < Staff::Base
     end
     if Staff::Authenticator.new(staff_member).authenticate(@form.password)
       session[:staff_member_id] = staff_member.id
+      flash.notice ='ログインしました。'
       redirect_to :staff_root
     else
+      # nowは現在のアクションでのみつかえる
+      flash.now.alert = 'メールアドレス、またはパスワードが正しくありません'
       # @formに間違った場合でもメールアドレスが入っているので、renderするnewのビューのform_forにデフォルトで表示される
       render action: 'new'
     end
   end
   def destroy
     session.delete(:staff_member_id)
+    # nowが付いていないとリダイレクト先でも使える
+    flash.notice = 'ログアウトしました。'
     redirect_to :staff_root
   end
 end
