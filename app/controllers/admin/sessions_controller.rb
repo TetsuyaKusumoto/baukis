@@ -26,11 +26,8 @@ class Admin::SessionsController < Admin::Base
     else
       # nowは現在のアクションでのみつかえる
       flash.now.alert = 'メールアドレス、またはパスワードが正しくありません'
-      # @formに間違った場合でもメールアドレスが入っているので、renderするnewのビューのform_forにデフォルトで表示される
-      #render action: 'new'
-      session[:administrator_id] = administrator.id
-      flash.notice ='ログインしました。'
-      redirect_to :admin_root
+      #redirect_to :admin_root
+      render action: 'new'
     end
   end
   def destroy
