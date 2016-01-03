@@ -33,7 +33,7 @@ module Baukis
     ## to avoid error "Unable to autoload constant ---" I added
     config.autoload_paths += %W(#{config.root}/forms)
     config.autoload_paths += %W(#{config.root}/service)
-    
+
 #    config.autoload_paths += [
 #      config.root.join('app', 'forms','service')
 #    ]
@@ -53,5 +53,6 @@ module Baukis
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    # config.action_controller.permit_all_parameters = true
   end
 end
