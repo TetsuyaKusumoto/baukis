@@ -1,4 +1,6 @@
 class Admin::SessionsController < Admin::Base
+  skip_before_action :authorize
+
   def new
     if current_administrator
       redirect_to :admin_root
@@ -21,7 +23,7 @@ class Admin::SessionsController < Admin::Base
       else
         session[:administrator_id] = administrator.id
         flash.notice ='ログインしました。'
-        redirect_to :staff_root
+        redirect_to :admin_root
       end
     else
       # nowは現在のアクションでのみつかえる
