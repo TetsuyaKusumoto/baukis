@@ -22,6 +22,7 @@ module Baukis
     config.i18n.load_path +=
       Dir[Rails.root.join('config', 'locales', '**', '*.{rb.yml}').to_s]
     config.i18n.default_locale = :ja
+    config.quiet_assets = false
     config.generators do |g|
       g.helper false
       g.assets false

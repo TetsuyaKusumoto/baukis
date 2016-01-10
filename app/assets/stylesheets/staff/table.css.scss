@@ -19,7 +19,7 @@ div.table-wrapper {
       td {
         padding: $narrow;
       }
-      td.email,
+      td.email, td.date, td.password { font-family: monospace; }
       td.date {
         font-family: monospace;
       }

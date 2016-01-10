@@ -36,6 +36,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'pry-rails'
+  gem 'sextant'
+  gem 'jquery-ui-rails'
+  gem 'quiet_assets'
 end
 
 group :development do
@@ -55,6 +61,14 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'nokogiri', '~> 1.6.1'
 # Error translation
 gem 'rails-i18n', '~> 4.0.1'
+
+# rails 4.2以降ではデフォルトでサポートされるようになったため不要
+#gem 'foreigner'
+gem 'kaminari'
+gem 'date_validator'
+gem 'email_validator'
+
+
 group :test do
 #  gem 'rspec-rails', '~> 3.0.0.beta2'
   gem 'rspec-rails'

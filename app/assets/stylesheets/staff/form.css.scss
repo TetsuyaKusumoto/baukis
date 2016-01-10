@@ -43,6 +43,12 @@ div#wrapper {
             padding: $wide $very_wide;
           }
         }
+        div.field_with_errors {
+          display: inline;
+          padding: 0;
+          label { colors: $red; }
+          input { background-color: $pink; }
+        }
       }
     }
   }

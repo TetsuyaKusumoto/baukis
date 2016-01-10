@@ -9,9 +9,9 @@ describe Staff::TopController, 'ログイン後' do
   end
 
   describe '#index' do
-    example '通常はstaff/top/indexを表示' do
+    example '通常はstaff/top/dashboardを表示' do
       get :index
-      expect(response).to render_template('staff/top/index')
+      expect(response).to render_template('staff/top/dashboard')
     end
     example '停止フラグがセットされたら強制的にログアウト' do
       staff_member.update_column(:suspended, true)
@@ -29,5 +29,5 @@ describe Staff::TopController, 'ログイン後' do
     end
 
   end
-  
+
 end
